@@ -1,14 +1,14 @@
 import s from "./ImageCard.module.css";
 
-const ImageCard = ({ image, onClick }) => {
+const ImageCard = ({ urls: { small }, alt_description, onShowModal }) => {
   return (
-    <div onClick={onClick}>
+    <div>
       <img
-        src={image.urls.small}
-        alt={image.alt_description}
-        key={image.id}
-        style={{ cursor: "pointer" }}
-        className={s.img}
+        className={s.image}
+        src={small}
+        alt={alt_description}
+        loading="lazy"
+        onClick={onShowModal}
       />
     </div>
   );
